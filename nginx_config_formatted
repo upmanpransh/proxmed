@@ -1,0 +1,52 @@
+server {
+    server_name maysam.shop;
+
+    # Serve static files for React app
+    location / {
+        root /var/www/html;
+        index index.html index.htm;
+        try_files $uri $uri/ /index.html;
+    }
+
+    # IMPORTANT: Serve React static files (CSS, JS, images) - this must come BEFORE the API location
+    location /static/ {
+        alias /var/www/html/static/;
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+
+    # Proxy API requests to Django backend
+    location /api/ {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # Serve Django static files (rename to avoid conflict)
+    location /django-static/ {
+        alias /var/www/maysam/backend/staticfiles/;
+    }
+
+    # Serve media files
+    location /media/ {
+        alias /var/www/maysam/backend/media/;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/maysam.shop/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/maysam.shop/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = maysam.shop) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    listen 80;
+    server_name maysam.shop;
+    return 404; # managed by Certbot
+}
