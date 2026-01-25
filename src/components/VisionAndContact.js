@@ -41,7 +41,7 @@ const VisionAndContact = () => {
             </section>
 
             {/* Contact Section */}
-            <section id="contact" className="py-24 bg-surface/20">
+            <section id="contact" className="py-24">
                 <div className="container mx-auto px-6 max-w-5xl">
                     <div className="text-center mb-16 reveal">
                         <h2 className="text-4xl md:text-5xl font-bold mb-6 font-outfit">Get in Touch</h2>
@@ -56,7 +56,7 @@ const VisionAndContact = () => {
                                     <input
                                         type="text"
                                         placeholder="Full Name"
-                                        className="w-full bg-background border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-accent transition-all"
+                                        className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-accent transition-all"
                                     />
                                 </div>
                                 <div className="relative group">
@@ -64,7 +64,7 @@ const VisionAndContact = () => {
                                     <input
                                         type="email"
                                         placeholder="Email Address"
-                                        className="w-full bg-background border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-accent transition-all"
+                                        className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-accent transition-all"
                                     />
                                 </div>
                                 <div className="relative group">
@@ -72,7 +72,7 @@ const VisionAndContact = () => {
                                     <input
                                         type="text"
                                         placeholder="Organization"
-                                        className="w-full bg-background border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-accent transition-all"
+                                        className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-accent transition-all"
                                     />
                                 </div>
                             </div>
@@ -81,7 +81,7 @@ const VisionAndContact = () => {
                                 <textarea
                                     rows="5"
                                     placeholder="Tell us about your project..."
-                                    className="w-full bg-background border border-white/10 rounded-2xl p-6 text-white focus:outline-none focus:border-accent transition-all resize-none h-full"
+                                    className="w-full bg-white/5 border border-white/10 rounded-2xl p-6 text-white focus:outline-none focus:border-accent transition-all resize-none h-full"
                                 ></textarea>
 
                                 <button

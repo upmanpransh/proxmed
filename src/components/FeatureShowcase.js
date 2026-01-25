@@ -68,7 +68,7 @@ const FeatureShowcase = () => {
                                     <p className="text-white font-bold group-hover:text-accent transition-colors duration-300">{feat.text}</p>
                                     <p className="text-text-dim text-xs uppercase tracking-widest mt-1">Proxmed Systems</p>
                                 </div>
-                                <div className="feature-circle w-16 h-16 bg-white rounded-full flex items-center justify-center text-background text-2xl shadow-[0_0_20px_var(--accent-color-glow)] border-2 border-transparent group-hover:border-accent transition-all duration-300">
+                                <div className="feature-circle w-16 h-16 bg-white/80 text-white glass-morphism rounded-full flex items-center justify-center text-background text-2xl shadow-[0_0_20px_var(--accent-color-glow)] border-2 border-transparent group-hover:border-accent group-hover:scale-110 transition-all duration-300">
                                     {feat.icon}
                                 </div>
                             </div>
@@ -80,9 +80,9 @@ const FeatureShowcase = () => {
                         {/* Glow Behind */}
                         <div className="hub-glow absolute inset-0 bg-accent/30 rounded-full blur-3xl -z-10 group-hover:bg-accent/40 transition-all duration-500" />
 
-                        <div className="w-64 h-64 md:w-80 md:h-80 bg-white rounded-full flex flex-col items-center justify-center p-8 shadow-[0_0_50px_var(--accent-color-glow)] border-4 border-white/10">
+                        <div className="w-64 h-64 md:w-80 md:h-80 glass-morphism rounded-full flex flex-col items-center justify-center p-8 shadow-[0_0_50px_var(--accent-color-glow)] border-2 border-white/10 group-hover:border-accent/30 transition-all duration-500">
                             <img src={logo} alt="Proxmed Hub" className="w-[180px] object-contain mb-4" />
-                            <p className="text-[10px] md:text-xs text-background font-bold tracking-[0.2em] uppercase text-center border-t border-black/10 pt-4 mt-2">
+                            <p className="text-[10px] text-white md:text-xs text-background font-bold tracking-[0.2em] uppercase text-center border-t border-white/10 pt-4 mt-2">
                                 Challenging the status quo
                             </p>
                         </div>
@@ -97,7 +97,7 @@ const FeatureShowcase = () => {
                     <div className="flex flex-col gap-12 lg:gap-20">
                         {rightFeatures.map((feat, idx) => (
                             <div key={idx} className="flex items-center space-x-6 group">
-                                <div className="feature-circle w-16 h-16 bg-white rounded-full flex items-center justify-center text-background text-2xl shadow-[0_0_20px_var(--accent-color-glow)] border-2 border-transparent group-hover:border-accent transition-all duration-300">
+                                <div className="feature-circle w-16 h-16 bg-white/90 glass-morphism rounded-full flex items-center justify-center text-background text-2xl shadow-[0_0_20px_var(--accent-color-glow)] border-2 border-transparent group-hover:border-accent group-hover:scale-110 transition-all duration-300 text-white">
                                     {feat.icon}
                                 </div>
                                 <div className="text-left hidden sm:block">

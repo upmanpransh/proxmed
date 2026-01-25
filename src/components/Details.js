@@ -110,7 +110,7 @@ const Details = () => {
             </section>
 
             {/* Why Proxmed Section */}
-            <section id="why" className="py-24 bg-surface/30">
+            <section id="why" className="py-24">
                 <div className="container mx-auto px-6">
                     <div className="max-w-3xl mb-20 reveal">
                         <h2 className="text-4xl md:text-5xl font-bold mb-8 font-outfit">Why Proxmed?</h2>

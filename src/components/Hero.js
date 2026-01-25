@@ -10,12 +10,13 @@ const Hero = () => {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            // Headline Animation
-            gsap.from(headlineRef.current, {
-                y: 50,
-                opacity: 0,
-                duration: 1,
-                ease: 'power3.out',
+            // Headline Character Animation
+            gsap.to('.headline-char', {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                stagger: 0.02,
+                ease: 'power4.out',
                 delay: 0.2
             });
 
@@ -96,9 +97,13 @@ const Hero = () => {
 
                     <h1
                         ref={headlineRef}
-                        className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight font-outfit"
+                        className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight font-outfit overflow-hidden"
                     >
-                        Proxmed — Challenging the <span className="text-accent underline decoration-accent/30 underline-offset-8">Status Quo</span> in Clinical Trials
+                        {"Proxmed — Challenging the Status Quo".split("").map((char, i) => (
+                            <span key={i} className="inline-block opacity-0 translate-y-full headline-char">
+                                {char === " " ? "\u00A0" : char}
+                            </span>
+                        ))}
                     </h1>
 
                     <p
@@ -114,13 +119,27 @@ const Hero = () => {
                     >
                         <a
                             href="#services"
-                            className="px-8 py-4 bg-accent hover:shadow-[0_0_30px_var(--accent-color-glow)] text-white rounded-full font-bold transition-all duration-300 transform hover:-translate-y-1 w-full sm:w-auto text-lg"
+                            onMouseMove={(e) => {
+                                const rect = e.currentTarget.getBoundingClientRect();
+                                const x = e.clientX - rect.left - rect.width / 2;
+                                const y = e.clientY - rect.top - rect.height / 2;
+                                gsap.to(e.currentTarget, { x: x * 0.3, y: y * 0.3, duration: 0.3 });
+                            }}
+                            onMouseLeave={(e) => gsap.to(e.currentTarget, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.3)' })}
+                            className="px-8 py-4 bg-accent hover:shadow-[0_0_30px_var(--accent-color-glow)] text-white rounded-full font-bold transition-all duration-300 transform w-full sm:w-auto text-lg shadow-lg interactive"
                         >
                             Explore Platform
                         </a>
                         <a
                             href="#story"
-                            className="px-8 py-4 glass-morphism border-white/20 hover:border-accent/50 text-white rounded-full font-bold transition-all duration-300 w-full sm:w-auto text-lg"
+                            onMouseMove={(e) => {
+                                const rect = e.currentTarget.getBoundingClientRect();
+                                const x = e.clientX - rect.left - rect.width / 2;
+                                const y = e.clientY - rect.top - rect.height / 2;
+                                gsap.to(e.currentTarget, { x: x * 0.3, y: y * 0.3, duration: 0.3 });
+                            }}
+                            onMouseLeave={(e) => gsap.to(e.currentTarget, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.3)' })}
+                            className="px-8 py-4 glass-morphism hover-glow text-white rounded-full font-bold transition-all duration-300 w-full sm:w-auto text-lg interactive"
                         >
                             Our Story
                         </a>

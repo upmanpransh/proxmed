@@ -35,7 +35,7 @@ const FloatingBackground = () => {
     }, []);
 
     return (
-        <div ref={bgRef} className="fixed inset-0 pointer-events-none overflow-hidden -z-10 bg-background">
+        <div ref={bgRef} className="fixed inset-0 pointer-events-none overflow-hidden -z-10 bg-transparent">
             {/* Top Right Blob */}
             <div className="bg-blob absolute -top-[10%] -right-[10%] w-[50vw] h-[50vw] rounded-full bg-accent/10 blur-[120px]" />
 
