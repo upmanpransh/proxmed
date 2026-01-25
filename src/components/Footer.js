@@ -19,9 +19,9 @@ const Footer = () => {
                             Challenging the Status Quo in Clinical Trials through AI and advanced computing.
                         </p>
                         <div className="flex space-x-6">
-                            <a href="#" className="text-text-dim hover:text-accent transition-colors"><FaTwitter size={24} /></a>
-                            <a href="#" className="text-text-dim hover:text-accent transition-colors"><FaLinkedin size={24} /></a>
-                            <a href="#" className="text-text-dim hover:text-accent transition-colors"><FaGithub size={24} /></a>
+                            <a href="https://twitter.com/proxmed" target="_blank" rel="noopener noreferrer" className="text-text-dim hover:text-accent transition-colors"><FaTwitter size={24} /></a>
+                            <a href="https://linkedin.com/company/proxmed" target="_blank" rel="noopener noreferrer" className="text-text-dim hover:text-accent transition-colors"><FaLinkedin size={24} /></a>
+                            <a href="https://github.com/proxmed" target="_blank" rel="noopener noreferrer" className="text-text-dim hover:text-accent transition-colors"><FaGithub size={24} /></a>
                         </div>
                     </div>
 
@@ -38,9 +38,9 @@ const Footer = () => {
                     <div>
                         <h4 className="text-white font-bold mb-6 font-outfit uppercase tracking-widest text-sm">Legal</h4>
                         <ul className="space-y-4">
-                            <li><a href="#" className="text-text-dim hover:text-accent transition-colors">Privacy Policy</a></li>
-                            <li><a href="#" className="text-text-dim hover:text-accent transition-colors">Terms of Service</a></li>
-                            <li><a href="#" className="text-text-dim hover:text-accent transition-colors">Cookie Policy</a></li>
+                            <li><a href="/privacy" className="text-text-dim hover:text-accent transition-colors">Privacy Policy</a></li>
+                            <li><a href="/terms" className="text-text-dim hover:text-accent transition-colors">Terms of Service</a></li>
+                            <li><a href="/cookies" className="text-text-dim hover:text-accent transition-colors">Cookie Policy</a></li>
                         </ul>
                     </div>
                 </div>

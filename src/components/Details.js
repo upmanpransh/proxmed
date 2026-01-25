@@ -26,7 +26,6 @@ const Details = () => {
 
             // Stats counting animation
             gsap.utils.toArray('.stat-number').forEach((el) => {
-                const val = parseInt(el.innerText);
                 gsap.from(el, {
                     innerText: 0,
                     duration: 2,
