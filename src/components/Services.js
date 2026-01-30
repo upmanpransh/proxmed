@@ -1,73 +1,61 @@
 import React from 'react';
-import { FaCloudUploadAlt, FaDatabase, FaLock, FaMicroscope } from 'react-icons/fa';
 
 const Services = () => {
     const services = [
         {
-            icon: <FaCloudUploadAlt />,
-            title: "Clinical Trial Imaging & Data Collection",
-            desc: "Robust, scalable systems for harvesting and centralising multi-modal clinical trial data."
+            title: "Intelligent Imaging",
+            desc: "AI-driven imaging pipelines that automate data extraction and quality control in real-time.",
+            icon: "🧬"
         },
         {
-            icon: <FaDatabase />,
-            title: "Organised Dataset Management",
-            desc: "Comprehensive tools for cleaning, tagging, and indexing large-scale medical datasets."
+            title: "Predictive Analytics",
+            desc: "Machine learning models that predict patient outcomes and optimize trial protocols.",
+            icon: "📊"
         },
         {
-            icon: <FaLock />,
-            title: "Secure Managed Access Portals",
-            desc: "Granular control and audit-ready data sharing environments for researcher collaboration."
-        },
-        {
-            icon: <FaMicroscope />,
-            title: "Advanced Image Processing",
-            desc: "Automated quantification and statistical generation using state-of-the-art AI models."
+            title: "Advanced Computing",
+            desc: "High-performance computing infrastructure designed for large-scale medical datasets.",
+            icon: "💻"
         }
     ];
 
     return (
-        <section id="services" className="py-24 relative overflow-hidden">
-            {/* Background Decor */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
-
-            <div className="container mx-auto px-6">
-                <div className="text-center mb-20 reveal">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 font-outfit">Our Services</h2>
-                    <p className="text-text-dim max-w-2xl mx-auto text-lg">
-                        Empowering research through specialized infrastructure and intelligent automation.
+        <section id="services" className="py-32 bg-[#030711] relative overflow-hidden">
+            <div className="container mx-auto px-6 relative z-10">
+                <div className="text-center mb-24">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+                        Our <span className="text-gradient">Core Capabilities</span>
+                    </h2>
+                    <p className="text-slate-400 max-w-2xl mx-auto text-lg font-light">
+                        We combine cutting-edge AI with deep clinical expertise to solve the hardest problems in medical research.
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8">
-                    {services.map((service, idx) => (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {services.map((service, index) => (
                         <div
-                            key={idx}
-                            className="group p-10 rounded-[2.5rem] glass-morphism border border-white/5 hover:border-accent/30 transition-all duration-500 relative overflow-hidden"
+                            key={index}
+                            className="glass-card p-10 rounded-3xl group relative overflow-hidden"
                         >
-                            {/* Hover Background Effect */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                            <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
-                                <div className="w-20 h-20 shrink-0 bg-surface-light rounded-3xl flex items-center justify-center text-4xl text-accent shadow-xl group-hover:scale-110 group-hover:bg-accent group-hover:text-white transition-all duration-500">
-                                    {service.icon}
-                                </div>
-                                <div className="text-center md:text-left">
-                                    <h3 className="text-2xl font-bold mb-4 font-outfit group-hover:text-accent transition-colors">
-                                        {service.title}
-                                    </h3>
-                                    <p className="text-text-dim text-lg leading-relaxed group-hover:text-white/80 transition-colors">
-                                        {service.desc}
-                                    </p>
-                                </div>
+                            <div className="text-4xl mb-8 group-hover:scale-110 transition-transform duration-300 inline-block">
+                                {service.icon}
                             </div>
+                            <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-accent transition-colors">
+                                {service.title}
+                            </h3>
+                            <p className="text-slate-400 leading-relaxed font-light group-hover:text-white/80 transition-colors">
+                                {service.desc}
+                            </p>
 
                             {/* Bottom Right Glow Decor */}
-                            <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-accent/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                            <div className="absolute -bottom-10 -right-10 w-24 h-24 bg-accent/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                         </div>
                     ))}
                 </div>
             </div>
+
+            {/* Background Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
         </section>
     );
 };

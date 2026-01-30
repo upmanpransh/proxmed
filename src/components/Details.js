@@ -1,143 +1,67 @@
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FaMicrochip, FaDatabase, FaShieldAlt, FaChartLine } from 'react-icons/fa';
-
-gsap.registerPlugin(ScrollTrigger);
+import React from 'react';
 
 const Details = () => {
-    const sectionRef = useRef(null);
-
-    useEffect(() => {
-        const ctx = gsap.context(() => {
-            // Fade in animations for sections
-            gsap.utils.toArray('.reveal').forEach((el) => {
-                gsap.from(el, {
-                    y: 50,
-                    opacity: 0,
-                    duration: 1,
-                    scrollTrigger: {
-                        trigger: el,
-                        start: 'top 85%',
-                        toggleActions: 'play none none none'
-                    }
-                });
-            });
-
-            // Stats counting animation
-            gsap.utils.toArray('.stat-number').forEach((el) => {
-                gsap.from(el, {
-                    innerText: 0,
-                    duration: 2,
-                    scrollTrigger: {
-                        trigger: el,
-                        start: 'top 90%'
-                    },
-                    snap: { innerText: 1 },
-                    onUpdate: function () {
-                        el.innerHTML = Math.ceil(this.targets()[0].innerText);
-                    }
-                });
-            });
-        }, sectionRef);
-
-        return () => ctx.revert();
-    }, []);
-
-    const stats = [
-        { label: 'Founded', value: '2022', suffix: '' },
-        { label: 'Optimization', value: '40', suffix: '%' },
-        { label: 'Trial Efficiency', value: '2.5', suffix: 'x' },
-        { label: 'Secure Portals', value: '100', suffix: '%' },
-    ];
-
-    const impactCards = [
-        {
-            icon: <FaDatabase className="text-3xl" />,
-            title: "Optimised Pipelines",
-            desc: "Streamlined data collection & processing pipelines for faster trial cycles."
-        },
-        {
-            icon: <FaChartLine className="text-3xl" />,
-            title: "Unified Platform",
-            desc: "A single ecosystem for statistics, imaging data, and post-processed analytics."
-        },
-        {
-            icon: <FaShieldAlt className="text-3xl" />,
-            title: "Enhanced Accessibility",
-            desc: "Secure, managed access to critical trial data across global teams."
-        },
-        {
-            icon: <FaMicrochip className="text-3xl" />,
-            title: "Clinical Excellence",
-            desc: "Real-world clinical trial optimization leveraging advanced AI architectures."
-        }
-    ];
-
     return (
-        <div ref={sectionRef}>
-            {/* Our Story Section */}
-            <section id="story" className="py-24 overflow-hidden">
-                <div className="container mx-auto px-6">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <div className="reveal">
-                            <h2 className="text-4xl md:text-5xl font-bold mb-8 font-outfit">Our Story</h2>
-                            <div className="space-y-6 text-text-dim text-lg leading-relaxed">
-                                <p>
-                                    After working within the clinical trial field, we noticed that there are many gaps in existing processes. These workflows can be automated and accelerated with a unified platform.
-                                </p>
-                                <p>
-                                    This motivated us to combine our expertise in computing, software development, distributed systems, and clinical imaging into a single, accessible platform designed for modern clinical trials.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="reveal grid grid-cols-2 gap-6">
-                            {stats.map((stat, idx) => (
-                                <div key={idx} className="glass-morphism p-8 rounded-3xl border border-white/5 hover:border-accent/30 transition-colors group">
-                                    <div className="text-4xl font-bold text-accent mb-2 font-outfit flex items-baseline">
-                                        <span className="stat-number">{stat.value}</span>
-                                        <span className="text-2xl ml-1">{stat.suffix}</span>
-                                    </div>
-                                    <div className="text-text-dim uppercase tracking-wider text-xs font-semibold group-hover:text-white transition-colors">
-                                        {stat.label}
+        <section id="story" className="py-32 bg-[#030711] relative overflow-hidden">
+            <div className="container mx-auto px-6 relative z-10">
+                <div className="grid lg:grid-cols-2 gap-20 items-center">
+                    {/* Visual Side */}
+                    <div className="relative order-2 lg:order-1">
+                        <div className="glass-card aspect-square rounded-[40px] p-8 relative overflow-hidden group">
+                            <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent opacity-50 group-hover:opacity-70 transition-opacity" />
+                            <div className="relative h-full border border-white/10 rounded-[32px] flex items-center justify-center bg-[#0b1120]/50">
+                                <span className="text-8xl opacity-20">🔬</span>
+                                {/* Small floating cards for high-tech feel */}
+                                <div className="absolute top-10 right-10 glass-card p-4 rounded-2xl animate-float">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                                        <span className="text-xs font-mono text-slate-300 tracking-tighter">DATA_SYNC: ACTIVE</span>
                                     </div>
                                 </div>
-                            ))}
+                                <div className="absolute bottom-10 left-10 glass-card p-4 rounded-2xl animate-float" style={{ animationDelay: '2s' }}>
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-2 h-2 rounded-full bg-accent-secondary animate-pulse" />
+                                        <span className="text-xs font-mono text-slate-300 tracking-tighter">AI_MODEL: v4.2.0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* Decorative glow behind */}
+                        <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-accent/20 blur-[100px] rounded-full" />
+                    </div>
+
+                    {/* Content Side */}
+                    <div className="order-1 lg:order-2">
+                        <div className="mb-8">
+                            <span className="text-accent font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Our Story</span>
+                            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 tracking-tight leading-tight">
+                                Challenging the <span className="text-gradient">Status Quo</span> for Patients Worldwide.
+                            </h2>
+                            <p className="text-slate-400 text-lg leading-relaxed mb-8 font-light">
+                                Proxmed was founded on a simple yet radical idea: that clinical trials are too slow, too expensive, and too inaccessible. By leveraging artificial intelligence and advanced computing, we're building the infrastructure for the next generation of medicine.
+                            </p>
+
+                            <div className="grid gap-6">
+                                <div className="flex gap-5">
+                                    <div className="w-12 h-12 shrink-0 rounded-2xl glass-card flex items-center justify-center text-accent text-xl font-bold">01</div>
+                                    <div>
+                                        <h4 className="text-white font-bold text-lg mb-1">Precision Data</h4>
+                                        <p className="text-slate-400 text-sm leading-relaxed">Automated imaging pipelines ensure sub-millimeter accuracy in every data point collected.</p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-5">
+                                    <div className="w-12 h-12 shrink-0 rounded-2xl glass-card flex items-center justify-center text-accent-secondary text-xl font-bold">02</div>
+                                    <div>
+                                        <h4 className="text-white font-bold text-lg mb-1">Patient-Centric AI</h4>
+                                        <p className="text-slate-400 text-sm leading-relaxed">Reducing the burden on clinical sites while improving the experience for every trial participant.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            {/* Why Proxmed Section */}
-            <section id="why" className="py-24">
-                <div className="container mx-auto px-6">
-                    <div className="max-w-3xl mb-20 reveal">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-8 font-outfit">Why Proxmed?</h2>
-                        <p className="text-xl text-text-dim leading-relaxed">
-                            Proxmed was created to leverage the latest advancements in AI and high-performance computing to accelerate every aspect of clinical trials — from data collection to image processing and analytics.
-                        </p>
-                    </div>
-
-                    <div id="impact" className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {impactCards.map((card, idx) => (
-                            <div
-                                key={idx}
-                                className="reveal glass-morphism p-8 rounded-3xl border border-white/5 hover:border-accent/40 transition-all duration-500 group hover:-translate-y-2"
-                            >
-                                <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-all duration-300">
-                                    {card.icon}
-                                </div>
-                                <h3 className="text-xl font-bold mb-4 font-outfit">{card.title}</h3>
-                                <p className="text-text-dim text-sm leading-relaxed group-hover:text-white/80 transition-colors">
-                                    {card.desc}
-                                </p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-        </div>
+            </div>
+        </section>
     );
 };
 

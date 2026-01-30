@@ -5,15 +5,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap');
 
 :root {
-  --accent-color: #3b82f6;
-  --accent-color-soft: rgba(59, 130, 246, 0.15);
-  --accent-color-glow: rgba(59, 130, 246, 0.4);
+  --primary-bg: #030711;
+  --secondary-bg: #0b1120;
+  --accent-color: #6366f1;
+  /* Indigo - very RapidAI */
+  --accent-secondary: #0ea5e9;
+  /* Sky Blue */
+  --accent-rose: #be123c;
+  /* RapidAI Red */
+  --accent-color-soft: rgba(99, 102, 241, 0.1);
+  --accent-color-glow: rgba(99, 102, 241, 0.3);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --glass-bg: rgba(15, 23, 42, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.08);
 }
 
 body {
   margin: 0;
-  background-color: #0a0a0a;
-  color: #ffffff;
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -27,67 +38,101 @@ h4,
 h5,
 h6 {
   font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
 }
 
 .glass-morphism {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid var(--glass-border);
 }
 
-.hover-glow {
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
-.hover-glow:hover {
-  box-shadow: 0 0 20px var(--accent-color-glow);
+.glass-card:hover {
   border-color: var(--accent-color);
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%);
+  transform: translateY(-5px);
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #ffffff, var(--accent-color));
+  background: linear-gradient(135deg, #fff 0%, var(--accent-secondary) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+.bg-mesh {
+  background-image:
+    radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+    radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+}
+
+.particle-wave {
+  background-image:
+    radial-gradient(circle at 50% 50%, var(--accent-rose) 0px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0;
+  opacity: 0.1;
+  mask-image: linear-gradient(to bottom, transparent, black, transparent);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.3);
+  }
+}
+
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
+::-webkit-scrollbar-track {
+  background: var(--primary-bg);
 }
 
-@keyframes marquee2 {
-  0% {
-    transform: translateX(100%);
-  }
-
-  100% {
-    transform: translateX(0%);
-  }
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
 }
 
-.animate-marquee {
-  animation: marquee 30s linear infinite;
-}
-
-.animate-marquee2 {
-  animation: marquee2 30s linear infinite;
-}
-
-.text-reveal-mask {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
 }
 
 .nav-link-underline {
@@ -101,23 +146,10 @@ h6 {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: var(--accent-color);
+  background: linear-gradient(to right, var(--accent-color), var(--accent-secondary));
   transition: width 0.3s ease;
 }
 
 .nav-link-underline:hover::after {
   width: 100%;
-}
-
-::-webkit-scrollbar-track {
-  background: #0a0a0a;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #1f2937;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-color);
 }

@@ -3,36 +3,43 @@ import { FaPaperPlane, FaEnvelope, FaBuilding, FaUser } from 'react-icons/fa';
 
 const VisionAndContact = () => {
     return (
-        <div className="relative">
+        <div className="bg-[#030711] relative overflow-hidden">
             {/* Future Vision Section */}
-            <section id="vision" className="py-24 relative">
+            <section id="vision" className="py-40 relative">
                 <div className="container mx-auto px-6">
-                    <div className="glass-morphism rounded-[3rem] p-12 md:p-20 relative overflow-hidden border border-white/10">
-                        {/* Background Animation Element */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-radial from-accent/20 to-transparent blur-3xl opacity-40 animate-pulse-slow pointer-events-none" />
+                    <div className="glass-card rounded-[4rem] p-12 md:p-24 relative overflow-hidden border border-white/5">
+                        {/* Background Decoration */}
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-radial from-accent/10 to-transparent blur-3xl pointer-events-none" />
 
-                        <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-                            <div className="reveal">
-                                <h2 className="text-4xl md:text-5xl font-bold mb-8 font-outfit leading-tight">
-                                    The Future of <span className="text-accent">Proxmed</span>
+                        <div className="relative z-10 grid lg:grid-cols-2 gap-20 items-center">
+                            <div>
+                                <span className="text-accent font-bold tracking-[0.3em] uppercase text-xs mb-6 block">Our Vision</span>
+                                <h2 className="text-5xl md:text-6xl font-bold text-white mb-10 tracking-tight leading-tight">
+                                    The Future of <br /><span className="text-gradient">Clinical AI</span> is Here.
                                 </h2>
-                                <p className="text-xl text-text-dim mb-8 leading-relaxed">
-                                    Bringing the latest advancements in AI and computing to clinical trials and healthcare — accelerating research and enabling real-time patient triage.
+                                <p className="text-xl text-slate-400 mb-12 leading-relaxed font-light">
+                                    We're not just building software; we're architecting the foundation for a world where clinical discovery happens at the speed of thought. Proxmed is where human expertise meets machine intelligence to save lives.
                                 </p>
-                                <div className="flex items-center space-x-4 text-accent font-semibold tracking-wide uppercase text-sm">
-                                    <span className="w-12 h-[1px] bg-accent"></span>
-                                    <span>Shaping the Next Frontier</span>
+                                <div className="flex items-center space-x-6">
+                                    <div className="w-16 h-[1px] bg-accent"></div>
+                                    <span className="text-white font-bold tracking-widest uppercase text-xs">Pioneering the Next Frontier</span>
                                 </div>
                             </div>
-                            <div className="reveal hidden lg:block">
+                            <div className="hidden lg:block">
                                 {/* Abstract futuristic visual */}
                                 <div className="relative w-full aspect-square">
-                                    <div className="absolute inset-0 border-2 border-accent/20 rounded-full animate-spin [animation-duration:30s]" />
-                                    <div className="absolute inset-[15%] border-2 border-white/5 rounded-full animate-reverse-spin [animation-duration:20s]" />
+                                    <div className="absolute inset-0 border border-white/5 rounded-full animate-spin-slow [animation-duration:60s]" />
+                                    <div className="absolute inset-[10%] border border-accent/10 rounded-full animate-spin-slow [animation-duration:40s] [animation-direction:reverse]" />
+                                    <div className="absolute inset-[25%] border border-white/5 rounded-full animate-spin-slow [animation-duration:20s]" />
                                     <div className="absolute inset-0 flex items-center justify-center">
-                                        <div className="w-32 h-32 bg-accent/20 rounded-full blur-2xl animate-glow" />
-                                        <div className="text-8xl text-accent opacity-20">AI</div>
+                                        <div className="w-40 h-40 bg-accent/20 rounded-full blur-3xl animate-pulse" />
+                                        <div className="text-9xl font-bold text-white/5 select-none font-outfit">AI</div>
                                     </div>
+
+                                    {/* Data nodes */}
+                                    <div className="absolute top-[10%] left-1/2 w-4 h-4 bg-accent rounded-full pulse-glow" />
+                                    <div className="absolute bottom-[20%] right-[10%] w-3 h-3 bg-accent-secondary rounded-full pulse-glow" />
+                                    <div className="absolute bottom-[15%] left-[15%] w-2 h-2 bg-white/50 rounded-full" />
                                 </div>
                             </div>
                         </div>
@@ -41,58 +48,86 @@ const VisionAndContact = () => {
             </section>
 
             {/* Contact Section */}
-            <section id="contact" className="py-24">
-                <div className="container mx-auto px-6 max-w-5xl">
-                    <div className="text-center mb-16 reveal">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6 font-outfit">Get in Touch</h2>
-                        <p className="text-text-dim text-lg">Let's discuss how Proxmed can accelerate your clinical research.</p>
-                    </div>
+            <section id="contact" className="py-24 pb-40">
+                <div className="container mx-auto px-6 max-w-6xl">
+                    <div className="grid lg:grid-cols-5 gap-16 items-start">
+                        <div className="lg:col-span-2">
+                            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 tracking-tight font-outfit">
+                                Start your <span className="text-gradient">journey</span> with us.
+                            </h2>
+                            <p className="text-slate-400 text-lg mb-10 font-light leading-relaxed">
+                                Ready to accelerate your clinical research? Our team of experts is here to help you deploy the future of clinical AI.
+                            </p>
 
-                    <div className="glass-morphism p-8 md:p-12 rounded-[2.5rem] border border-white/10 reveal shadow-2xl">
-                        <form className="grid md:grid-cols-2 gap-8">
-                            <div className="space-y-6">
-                                <div className="relative group">
-                                    <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 text-text-dim group-focus-within:text-accent transition-colors" />
-                                    <input
-                                        type="text"
-                                        placeholder="Full Name"
-                                        className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-accent transition-all"
-                                    />
+                            <div className="space-y-8">
+                                <div className="flex items-center gap-6 group">
+                                    <div className="w-14 h-14 rounded-2xl glass-card flex items-center justify-center text-accent text-xl group-hover:bg-accent group-hover:text-white transition-all">
+                                        <FaEnvelope />
+                                    </div>
+                                    <div>
+                                        <p className="text-slate-500 text-xs font-bold uppercase tracking-widest">Email Us</p>
+                                        <p className="text-white font-bold">hello@proxmed.ai</p>
+                                    </div>
                                 </div>
-                                <div className="relative group">
-                                    <FaEnvelope className="absolute left-4 top-1/2 -translate-y-1/2 text-text-dim group-focus-within:text-accent transition-colors" />
-                                    <input
-                                        type="email"
-                                        placeholder="Email Address"
-                                        className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-accent transition-all"
-                                    />
-                                </div>
-                                <div className="relative group">
-                                    <FaBuilding className="absolute left-4 top-1/2 -translate-y-1/2 text-text-dim group-focus-within:text-accent transition-colors" />
-                                    <input
-                                        type="text"
-                                        placeholder="Organization"
-                                        className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-accent transition-all"
-                                    />
+                                <div className="flex items-center gap-6 group">
+                                    <div className="w-14 h-14 rounded-2xl glass-card flex items-center justify-center text-accent-secondary text-xl group-hover:bg-accent-secondary group-hover:text-white transition-all">
+                                        <FaBuilding />
+                                    </div>
+                                    <div>
+                                        <p className="text-slate-500 text-xs font-bold uppercase tracking-widest">Visit Us</p>
+                                        <p className="text-white font-bold">San Francisco, CA</p>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div className="flex flex-col space-y-6">
-                                <textarea
-                                    rows="5"
-                                    placeholder="Tell us about your project..."
-                                    className="w-full bg-white/5 border border-white/10 rounded-2xl p-6 text-white focus:outline-none focus:border-accent transition-all resize-none h-full"
-                                ></textarea>
+                        <div className="lg:col-span-3">
+                            <div className="glass-card p-10 md:p-16 rounded-[3rem] border border-white/5 relative overflow-hidden group">
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-[100px] -z-10 group-hover:bg-accent/10 transition-all" />
 
-                                <button
-                                    type="submit"
-                                    className="w-full bg-accent hover:shadow-[0_0_20px_var(--accent-color-glow)] text-white py-4 rounded-2xl font-bold flex items-center justify-center space-x-3 transition-all duration-300 hover:-translate-y-1 group"
-                                >
-                                    <FaPaperPlane className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                                    <span>Send Message</span>
-                                </button>
+                                <form className="space-y-8">
+                                    <div className="grid md:grid-cols-2 gap-8">
+                                        <div className="space-y-2">
+                                            <label className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] ml-2">Your Name</label>
+                                            <div className="relative">
+                                                <input
+                                                    type="text"
+                                                    placeholder="John Doe"
+                                                    className="w-full bg-[#0b1120]/50 border border-white/5 rounded-2xl py-5 px-6 text-white focus:outline-none focus:border-accent/50 transition-all font-light"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] ml-2">Email Address</label>
+                                            <div className="relative">
+                                                <input
+                                                    type="email"
+                                                    placeholder="john@company.com"
+                                                    className="w-full bg-[#0b1120]/50 border border-white/5 rounded-2xl py-5 px-6 text-white focus:outline-none focus:border-accent/50 transition-all font-light"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-2">
+                                        <label className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] ml-2">Your Message</label>
+                                        <textarea
+                                            rows="5"
+                                            placeholder="How can we help you?"
+                                            className="w-full bg-[#0b1120]/50 border border-white/5 rounded-2xl p-8 text-white focus:outline-none focus:border-accent/50 transition-all resize-none font-light"
+                                        ></textarea>
+                                    </div>
+
+                                    <button
+                                        type="submit"
+                                        className="w-full bg-accent hover:bg-accent/90 text-white py-5 rounded-2xl font-bold flex items-center justify-center space-x-3 transition-all duration-300 hover:shadow-[0_15px_35px_rgba(99,102,241,0.4)] group"
+                                    >
+                                        <span>Send Inquiry</span>
+                                        <FaPaperPlane size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                    </button>
+                                </form>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </section>

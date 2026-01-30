@@ -7,21 +7,27 @@ import FeatureShowcase from "./components/FeatureShowcase";
 import VisionAndContact from "./components/VisionAndContact";
 import Footer from "./components/Footer";
 import FloatingBackground from "./components/FloatingBackground";
-import CustomCursor from "./components/CustomCursor";
 import Marquee from "./components/Marquee";
 import BackgroundVideo from "./components/BackgroundVideo";
+import SolutionsShowcase from "./components/SolutionsShowcase";
+import ImpactQuantified from "./components/ImpactQuantified";
+import PlatformAndServices from "./components/PlatformAndServices";
+import ResourcesAndCTA from "./components/ResourcesAndCTA";
 
 function App() {
   return (
     <Suspense fallback={<div className="w-full h-screen bg-background flex justify-center items-center text-white text-2xl">Loading...</div>}>
-      <div className="min-h-screen relative overflow-x-hidden bg-transparent cursor-none">
-        <CustomCursor />
+      <div className="min-h-screen relative overflow-x-hidden bg-transparent">
         <BackgroundVideo />
         <FloatingBackground />
         <Navbar />
         <main className="relative z-10">
           <Hero />
-          <Marquee text="Pioneering AI in Clinical Trials • Challenging the Status Quo" />
+          <SolutionsShowcase />
+          <ImpactQuantified />
+          <PlatformAndServices />
+          <ResourcesAndCTA />
+          <Marquee text="Accelerating Clinical Trials • Intelligent Imaging • Clinical AI Precision" />
           <Details />
           <Services />
           <FeatureShowcase />
