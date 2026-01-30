@@ -13,16 +13,16 @@ const VisionAndContact = () => {
 
                         <div className="relative z-10 grid lg:grid-cols-2 gap-20 items-center">
                             <div>
-                                <span className="text-accent font-bold tracking-[0.3em] uppercase text-xs mb-6 block">Our Vision</span>
-                                <h2 className="text-5xl md:text-6xl font-bold text-white mb-10 tracking-tight leading-tight">
-                                    The Future of <br /><span className="text-gradient">Clinical AI</span> is Here.
+                                <span className="text-accent-rose font-bold tracking-[0.3em] uppercase text-xs mb-6 block">Our Vision</span>
+                                <h2 className="text-5xl md:text-6xl font-bold text-white mb-10 tracking-tight leading-tight uppercase font-outfit">
+                                    Accelerating the <br /><span className="text-accent-rose italic font-light">Future of Research</span>.
                                 </h2>
                                 <p className="text-xl text-slate-400 mb-12 leading-relaxed font-light">
-                                    We're not just building software; we're architecting the foundation for a world where clinical discovery happens at the speed of thought. Proxmed is where human expertise meets machine intelligence to save lives.
+                                    Bring the advancements in AI and computing to the clinical trials and healthcare world to accelerate research and ultimately triage patients in real-time. Proxmed is where human expertise meets machine intelligence.
                                 </p>
                                 <div className="flex items-center space-x-6">
-                                    <div className="w-16 h-[1px] bg-accent"></div>
-                                    <span className="text-white font-bold tracking-widest uppercase text-xs">Pioneering the Next Frontier</span>
+                                    <div className="w-16 h-[1px] bg-accent-rose"></div>
+                                    <span className="text-white font-bold tracking-widest uppercase text-xs font-outfit">Real-time Patient Triaging</span>
                                 </div>
                             </div>
                             <div className="hidden lg:block">
@@ -55,8 +55,8 @@ const VisionAndContact = () => {
                             <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 tracking-tight font-outfit">
                                 Start your <span className="text-gradient">journey</span> with us.
                             </h2>
-                            <p className="text-slate-400 text-lg mb-10 font-light leading-relaxed">
-                                Ready to accelerate your clinical research? Our team of experts is here to help you deploy the future of clinical AI.
+                            <p className="text-slate-400 text-lg mb-10 font-bold leading-relaxed italic">
+                                Ready to accelerate your clinical research? Our team of experts is here to help you deploy the future of clinical AI for optimized data pipelines.
                             </p>
 
                             <div className="space-y-8">
@@ -120,7 +120,7 @@ const VisionAndContact = () => {
 
                                     <button
                                         type="submit"
-                                        className="w-full bg-accent hover:bg-accent/90 text-white py-5 rounded-2xl font-bold flex items-center justify-center space-x-3 transition-all duration-300 hover:shadow-[0_15px_35px_rgba(99,102,241,0.4)] group"
+                                        className="w-full bg-[#be123c] hover:bg-[#ff1e56] text-white py-5 rounded-[1.5rem] font-black uppercase tracking-[0.2em] flex items-center justify-center space-x-4 transition-all duration-300 hover:shadow-[0_15px_35px_rgba(190,18,60,0.4)] group"
                                     >
                                         <span>Send Inquiry</span>
                                         <FaPaperPlane size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

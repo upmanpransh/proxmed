@@ -10,47 +10,47 @@ const ResourcesAndCTA = () => {
 
     const resources = [
         {
-            type: "Press release",
-            title: "RapidAI Extends the Reach of Deep Clinical AI with Five New FDA Clearances",
-            desc: "New clearances expand the Rapid Enterprise™ Platform, advancing radiology precision, and elevating neurology and vascular care through deep clinical AI.",
+            type: "Clinical Focus",
+            title: "Optimizing Data Collection for Ongoing Trials",
+            desc: "Helping research teams automate datasets and accelerate clinical imaging workflows.",
             id: 1
         },
         {
-            type: "Press release",
-            title: "Lumina 3D by RapidAI Named to TIME's List of the Best Inventions of 2025",
-            desc: "This recognition highlights our commitment to advancing deep clinical AI that enhances physician performance and operational efficiency.",
+            type: "Innovation",
+            title: "Leveraging AI for Accelerated Research",
+            desc: "Using distributed systems and software expertise to triage patients in real-time.",
             id: 2
         },
         {
-            type: "Article",
-            title: "Using AI to improve stroke outcomes in rural Missouri: \"We can save your life.\"",
-            desc: "This story highlights how rural hospitals like TCMH in Missouri are using its AI-powered stroke software to improve local stroke outcomes.",
+            type: "Technology",
+            title: "Integrating Distributed Systems in Healthcare",
+            desc: "A single, managed-access portal for imaging data and post-processed statistics.",
             id: 3
         }
     ];
 
     useEffect(() => {
         const ctx = gsap.context(() => {
+            // Remove opacity animation to prevent "stuck" states
             gsap.from('.resource-card', {
-                y: 50,
-                opacity: 0,
-                duration: 1,
-                stagger: 0.2,
-                ease: 'power3.out',
+                y: 30,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: 'power2.out',
                 scrollTrigger: {
                     trigger: '.resource-grid',
-                    start: 'top 80%',
+                    start: 'top 90%',
                 }
             });
 
             gsap.from('.final-cta-card', {
-                scale: 0.95,
+                y: 40,
                 opacity: 0,
-                duration: 1.2,
-                ease: 'expo.out',
+                duration: 1,
+                ease: 'power3.out',
                 scrollTrigger: {
                     trigger: '.final-cta-card',
-                    start: 'top 85%',
+                    start: 'top 90%',
                 }
             });
         }, sectionRef);
@@ -58,46 +58,58 @@ const ResourcesAndCTA = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="bg-white py-24">
+        <section ref={sectionRef} className="bg-white py-32 relative z-[20] block">
             <div className="container mx-auto px-6">
 
-                {/* Resources Header */}
-                <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
-                    <h2 className="text-4xl md:text-5xl font-bold text-[#030711] tracking-tight font-outfit">
-                        Get to know Rapid in the real world
+                {/* Header */}
+                <div className="flex flex-col md:flex-row justify-between items-center mb-24 gap-6">
+                    <h2 className="text-4xl md:text-6xl font-black text-black tracking-tighter uppercase font-outfit">
+                        Insights & Innovations
                     </h2>
-                    <button className="px-8 py-3 rounded-full border border-black text-black font-bold uppercase text-xs tracking-widest hover:bg-black hover:text-white transition-all flex items-center gap-2">
-                        View all resources <span>↗</span>
+                    <button className="px-10 py-4 rounded-xl border-2 border-black/5 text-black font-black uppercase text-[11px] tracking-[0.25em] hover:bg-black hover:text-white transition-all flex items-center gap-3">
+                        View all resources <span className="text-lg">↗</span>
                     </button>
                 </div>
 
                 {/* Resource Grid */}
-                <div className="resource-grid grid grid-cols-1 md:grid-cols-3 gap-8 mb-40">
+                <div className="resource-grid grid grid-cols-1 md:grid-cols-3 gap-12 mb-48">
                     {resources.map((res) => (
-                        <div key={res.id} className="resource-card group cursor-pointer bg-white rounded-3xl p-4 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-slate-100 hover:shadow-[0_30px_60px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-2">
+                        <div
+                            key={res.id}
+                            style={{ opacity: 1, visibility: 'visible' }}
+                            className="resource-card group bg-white rounded-[2.5rem] p-8 shadow-[0_40px_100px_rgba(0,0,0,0.08)] border border-black/[0.03] hover:shadow-[0_60px_120px_rgba(0,0,0,0.15)] transition-all duration-700 hover:-translate-y-3 flex flex-col h-full opacity-100"
+                        >
                             {/* Card Image Area */}
-                            <div className="relative aspect-video rounded-2xl overflow-hidden mb-8 bg-[#030711]">
-                                <img src={waveBg} alt="" className="w-full h-full object-cover mix-blend-screen opacity-40 group-hover:scale-110 transition-transform duration-700" />
+                            <div className="relative aspect-video rounded-[2rem] overflow-hidden mb-10 bg-black flex-shrink-0 shadow-inner">
+                                <img
+                                    src={waveBg}
+                                    alt=""
+                                    className="w-full h-full object-cover mix-blend-screen opacity-60 group-hover:scale-110 transition-transform duration-1000 grayscale-[0.5] group-hover:grayscale-0"
+                                />
                                 <div className="absolute inset-0 flex items-center justify-center">
-                                    <span className="text-white text-3xl font-black tracking-tighter uppercase italic">RapidAI</span>
+                                    <span className="text-white text-4xl font-black tracking-tighter uppercase italic drop-shadow-2xl">PROXMED</span>
                                 </div>
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                             </div>
 
                             {/* Card Content */}
-                            <div className="px-4 pb-4">
-                                <span className={`inline-block px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider mb-6 ${res.type === 'Article' ? 'bg-[#be123c] text-white' : 'bg-[#be123c] text-white'}`}>
-                                    {res.type}
-                                </span>
-                                <div className="flex justify-between items-start gap-4 mb-4">
-                                    <h3 className="text-xl md:text-2xl font-bold text-[#030711] leading-snug group-hover:text-[#be123c] transition-colors">
+                            <div className="flex flex-col flex-grow">
+                                <div className="mb-8">
+                                    <span className="inline-block px-5 py-2 rounded-xl text-[11px] font-black uppercase tracking-[0.2em] bg-[#be123c] text-white shadow-xl shadow-rose-900/40">
+                                        {res.type}
+                                    </span>
+                                </div>
+
+                                <div className="flex justify-between items-start gap-6 mb-6">
+                                    <h3 className="text-2xl md:text-3xl font-black text-black leading-tight group-hover:text-[#be123c] transition-colors duration-300 uppercase tracking-tighter">
                                         {res.title}
                                     </h3>
-                                    <div className="w-8 h-8 rounded-full border border-slate-200 flex flex-shrink-0 items-center justify-center text-slate-400 group-hover:border-[#be123c] group-hover:text-[#be123c] transition-all">
-                                        <span className="text-sm">↗</span>
+                                    <div className="w-12 h-12 rounded-2xl border-2 border-black/5 flex flex-shrink-0 items-center justify-center text-black/20 group-hover:border-[#be123c] group-hover:text-[#be123c] group-hover:bg-rose-50 transition-all duration-500 transform group-hover:rotate-12">
+                                        <span className="text-xl font-bold">↗</span>
                                     </div>
                                 </div>
-                                <p className="text-slate-500 text-sm leading-relaxed font-medium">
+
+                                <p className="text-slate-600 text-base leading-relaxed font-bold mt-auto opacity-80">
                                     {res.desc}
                                 </p>
                             </div>
@@ -106,19 +118,19 @@ const ResourcesAndCTA = () => {
                 </div>
 
                 {/* Final CTA Section */}
-                <div className="final-cta-card relative bg-[#030711] rounded-[3rem] p-12 md:p-32 text-center overflow-hidden shadow-2xl">
+                <div className="final-cta-card relative bg-black rounded-[4rem] p-20 md:p-32 text-center overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.4)]">
                     {/* Background Wave */}
-                    <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
-                        <img src={waveBg} alt="" className="w-full h-full object-cover mix-blend-screen transform rotate-180 scale-150" />
-                        <div className="absolute inset-0 bg-gradient-to-b from-[#030711] via-transparent to-[#030711]" />
+                    <div className="absolute inset-0 z-0 pointer-events-none opacity-50">
+                        <img src={waveBg} alt="" className="w-full h-full object-cover mix-blend-screen transform rotate-180 scale-125 hover:scale-150 transition-transform duration-[20s]" />
+                        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
                     </div>
 
                     <div className="relative z-10">
-                        <h2 className="text-4xl md:text-7xl font-bold text-white mb-16 tracking-tight font-outfit leading-tight">
-                            Ready to see the<br />difference for yourself?
+                        <h2 className="text-5xl md:text-8xl font-black text-white mb-20 tracking-tighter font-outfit leading-[1.0] uppercase">
+                            Ready to accelerate<br />clinical research?
                         </h2>
-                        <button className="bg-[#be123c] hover:bg-[#a00e32] text-white px-10 py-5 rounded-full text-sm font-bold uppercase tracking-widest transition-all hover:scale-105 shadow-[0_0_30px_rgba(190,18,60,0.4)] flex items-center gap-3 mx-auto">
-                            Request a Demo <span>↗</span>
+                        <button className="bg-[#be123c] hover:bg-[#ff1e56] text-white px-16 py-8 rounded-[2rem] text-sm font-black uppercase tracking-[0.3em] transition-all hover:scale-105 shadow-[0_20px_60px_rgba(190,18,60,0.6)] flex items-center gap-6 mx-auto group">
+                            Get Linked With Us <span className="text-2xl group-hover:translate-x-2 transition-transform">↗</span>
                         </button>
                     </div>
                 </div>

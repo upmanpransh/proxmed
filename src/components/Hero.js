@@ -71,9 +71,9 @@ const Hero = () => {
             <div className="container mx-auto px-6 relative z-20">
                 {/* Headline Section */}
                 <div className="hero-fade-in opacity-0 translate-y-8 text-center mb-16 max-w-5xl mx-auto">
-                    <h1 className="text-5xl md:text-7xl font-bold text-white mb-10 tracking-tight leading-[1.1] font-outfit">
-                        A <span className="italic font-light">history</span> of shaping guidelines<br />
-                        The <span className="italic font-light">future</span> of transformative care
+                    <h1 className="text-5xl md:text-7xl font-bold text-white mb-10 tracking-tight leading-[1.1] font-outfit uppercase">
+                        Accelerating <span className="italic font-light lowercase text-accent-rose">clinical trials</span><br />
+                        with AI-driven <span className="italic font-light lowercase">precision</span>
                     </h1>
 
                     <button className="inline-flex items-center gap-5 text-slate-300 hover:text-white transition-all group">

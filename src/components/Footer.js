@@ -67,8 +67,9 @@ const Footer = () => {
                         <p>© {currentYear} Proxmed Inc. Built for the future of medicine.</p>
                         <div className="flex gap-8">
                             <a href="/privacy" className="hover:text-white transition-colors">Privacy</a>
-                            <a href="/terms" className="hover:text-white transition-colors">Terms</a>
-                            <a href="/cookies" className="hover:text-white transition-colors">Cookies</a>
+                            <div className="text-3xl font-black text-white group cursor-pointer inline-flex items-center">
+                                PROXMED<span className="text-accent ml-1 transition-all group-hover:animate-pulse">.</span>
+                            </div>
                         </div>
                     </div>
                     <p className="mt-8 md:mt-0 flex items-center bg-white/5 px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest text-slate-400 border border-white/5">

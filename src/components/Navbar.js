@@ -46,7 +46,7 @@ const Navbar = () => {
             <div className="container mx-auto px-6 flex justify-between items-center">
                 {/* Logo */}
                 <Link to="/" className="flex items-center space-x-3 group">
-                    <span className="text-white font-bold text-2xl tracking-tight font-outfit uppercase">RapidAI</span>
+                    <span className="text-white font-bold text-2xl tracking-tight font-outfit uppercase">Proxmed</span>
                 </Link>
 
                 {/* Desktop Links */}

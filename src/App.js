@@ -26,11 +26,11 @@ function App() {
           <SolutionsShowcase />
           <ImpactQuantified />
           <PlatformAndServices />
-          <ResourcesAndCTA />
           <Marquee text="Accelerating Clinical Trials • Intelligent Imaging • Clinical AI Precision" />
           <Details />
           <Services />
           <FeatureShowcase />
+          <ResourcesAndCTA />
           <VisionAndContact />
         </main>
         <Footer />
