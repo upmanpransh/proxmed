@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaPaperPlane, FaEnvelope, FaBuilding, FaUser } from 'react-icons/fa';
+import { FaPaperPlane, FaEnvelope, FaBuilding } from 'react-icons/fa';
 
 const VisionAndContact = () => {
     return (
